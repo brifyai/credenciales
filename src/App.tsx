@@ -11,7 +11,7 @@ import {
   FlaskConical, DollarSign, AlertTriangle, Building2, Trello, Clock,
   Tag, Globe, Sparkles, ShieldAlert, CreditCard, Truck, Hash, Monitor,
   Settings, LucideIcon, LayoutDashboard, FileBarChart, LineChart, 
-  GitCompare, Plug2
+  GitCompare, Plug2, KeyRound, Code2
 } from 'lucide-react';
 import { apps } from './data/apps';
 import type { AppData } from './data/apps';
@@ -282,7 +282,7 @@ function CredCard({ cred, color }: { cred: AppData['credentials'][0]; color: str
       {/* Role */}
       <div className="flex items-center gap-3 mb-4">
         <div className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: `${color}15`, border: `1px solid ${color}25` }}>
-          <Shield size={16} style={{ color }} />
+          <KeyRound size={16} style={{ color }} />
         </div>
         <span className="text-sm font-semibold text-white">{cred.role}</span>
       </div>
@@ -503,7 +503,7 @@ function DetailPage() {
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex items-center gap-3 mb-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
-            <Sparkles size={20} style={{ color: app.color }} />
+            <Zap size={20} style={{ color: app.color }} />
           </div>
           <h2 className="text-2xl font-bold tracking-tight">Características y Funciones</h2>
         </div>
@@ -532,7 +532,7 @@ function DetailPage() {
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="flex items-center gap-3 mb-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
-            <Shield size={16} style={{ color: app.color }} />
+            <KeyRound size={20} style={{ color: app.color }} />
           </div>
           <h2 className="text-2xl font-bold tracking-tight">Credenciales de Acceso</h2>
         </div>
@@ -550,7 +550,7 @@ function DetailPage() {
         <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8">
           <h3 className="text-lg font-bold tracking-tight mb-6 flex items-center gap-3">
             <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
-              <Settings size={20} style={{ color: app.color }} />
+              <Code2 size={20} style={{ color: app.color }} />
             </span>
             Stack Tecnológico
           </h3>
