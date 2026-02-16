@@ -45,9 +45,7 @@ export const apps: AppData[] = [
     status: 'live',
     previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80',
     credentials: [
-      { email: 'admin@viewly.app', password: 'Admin2024!', role: 'Administrador' },
-      { email: 'agencia@viewly.app', password: 'Agencia2024!', role: 'Agencia' },
-      { email: 'cliente@viewly.app', password: 'Cliente2024!', role: 'Cliente' },
+      { email: 'demo@viewly.com', password: 'demo123', role: 'Cuenta de Prueba' },
     ],
     features: [
       { title: 'Dashboard Unificado', description: 'Visualiza todas tus campañas de Facebook, Instagram, TikTok y YouTube en un solo panel con métricas en tiempo real', icon: 'BarChart3' },
