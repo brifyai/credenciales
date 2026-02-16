@@ -32,7 +32,7 @@ export interface AppData {
 
 export const apps: AppData[] = [
   {
-    id: 'crm-ai',
+    id: 'viewly',
     name: 'Viewly',
     description: 'Plataforma de analítica digital para redes sociales',
     longDescription: 'Viewly centraliza todas tus campañas de marketing digital en un solo lugar. Gestiona Facebook, Instagram, TikTok y YouTube desde una interfaz moderna. Genera reportes profesionales automáticos, compara rendimiento entre plataformas y presenta resultados impactantes a tus clientes. Ideal para agencias, community managers y equipos de marketing que buscan eficiencia y resultados medibles.',
