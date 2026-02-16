@@ -10,7 +10,8 @@ import {
   Warehouse, RefreshCw, Calculator, Heart, GraduationCap, PenTool,
   FlaskConical, DollarSign, AlertTriangle, Building2, Trello, Clock,
   Tag, Globe, Sparkles, ShieldAlert, CreditCard, Truck, Hash, Monitor,
-  Settings, LucideIcon
+  Settings, LucideIcon, LayoutDashboard, FileBarChart, LineChart, 
+  GitCompare, Plug2
 } from 'lucide-react';
 import { apps } from './data/apps';
 import type { AppData } from './data/apps';
@@ -24,7 +25,8 @@ const iconMap: Record<string, LucideIcon> = {
   Warehouse, RefreshCw, Calculator, Heart, GraduationCap, PenTool,
   FlaskConical, DollarSign, AlertTriangle, Building2, Trello, Clock,
   Tag, Globe, Sparkles, ShieldAlert, CreditCard, Truck, Search, Hash,
-  Monitor, Settings, Mail
+  Monitor, Settings, Mail, LayoutDashboard, FileBarChart, LineChart,
+  GitCompare, Plug2
 };
 
 const getIcon = (iconName: string, size: number = 20, color?: string) => {
