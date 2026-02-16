@@ -11,7 +11,8 @@ import {
   FlaskConical, DollarSign, AlertTriangle, Building2, Trello, Clock,
   Tag, Globe, Sparkles, ShieldAlert, CreditCard, Truck, Hash, Monitor,
   Settings, LucideIcon, LayoutDashboard, FileBarChart, LineChart, 
-  GitCompare, Plug2, KeyRound, Code2
+  GitCompare, Plug2, KeyRound, Code2, Crosshair, BarChart4, 
+  FileSpreadsheet, Link2, Coins
 } from 'lucide-react';
 import { apps } from './data/apps';
 import type { AppData } from './data/apps';
@@ -406,7 +407,10 @@ function DetailPage() {
             <div className="space-y-6 mb-8">
               <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8">
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                  <span className="text-3xl">🎯</span> ¿Qué es Viewly?
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
+                    <Crosshair size={24} style={{ color: app.color }} />
+                  </div>
+                  ¿Qué es Viewly?
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed mb-4">
                   Tu centro de comando para marketing digital. Viewly centraliza y analiza todas tus campañas de 
@@ -424,7 +428,9 @@ function DetailPage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-3xl">📊</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
+                      <BarChart4 size={24} style={{ color: app.color }} />
+                    </div>
                     <h4 className="font-bold text-white text-lg">Dashboard Unificado</h4>
                   </div>
                   <p className="text-sm text-gray-400 leading-relaxed">
@@ -435,7 +441,9 @@ function DetailPage() {
 
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-3xl">📄</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
+                      <FileSpreadsheet size={24} style={{ color: app.color }} />
+                    </div>
                     <h4 className="font-bold text-white text-lg">Reportes Profesionales</h4>
                   </div>
                   <p className="text-sm text-gray-400 leading-relaxed">
@@ -446,7 +454,9 @@ function DetailPage() {
 
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-3xl">🔗</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
+                      <Link2 size={24} style={{ color: app.color }} />
+                    </div>
                     <h4 className="font-bold text-white text-lg">Integraciones OAuth 2.0</h4>
                   </div>
                   <p className="text-sm text-gray-400 leading-relaxed">
@@ -457,7 +467,9 @@ function DetailPage() {
 
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-3xl">💰</span>
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
+                      <Coins size={24} style={{ color: app.color }} />
+                    </div>
                     <h4 className="font-bold text-white text-lg">ROI y Conversiones</h4>
                   </div>
                   <p className="text-sm text-gray-400 leading-relaxed">
@@ -469,7 +481,10 @@ function DetailPage() {
 
               <div className="rounded-2xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 p-8">
                 <h4 className="font-bold text-white text-xl mb-4 flex items-center gap-3">
-                  <span className="text-3xl">✨</span> Perfecto para:
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}20`, border: `1px solid ${app.color}30` }}>
+                    <Sparkles size={24} style={{ color: app.color }} />
+                  </div>
+                  Perfecto para:
                 </h4>
                 <div className="grid sm:grid-cols-3 gap-4">
                   <div className="flex flex-col gap-2">
