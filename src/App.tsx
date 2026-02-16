@@ -362,7 +362,73 @@ function DetailPage() {
             </div>
           </div>
 
-          <p className="text-gray-400 leading-relaxed mb-8 max-w-3xl">{app.longDescription}</p>
+          {/* Description - Special format for Viewly */}
+          {app.id === 'viewly' ? (
+            <div className="space-y-6 mb-8 max-w-3xl">
+              <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6">
+                <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                  <span className="text-2xl">🎯</span> ¿Qué es Viewly?
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Plataforma profesional que centraliza el análisis de campañas de Facebook, Instagram, TikTok y YouTube. 
+                  Diseñada para agencias, community managers y equipos de marketing digital.
+                </p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">📊</span>
+                    <h4 className="font-semibold text-white">Dashboard Unificado</h4>
+                  </div>
+                  <p className="text-sm text-gray-500">Todas tus métricas en tiempo real desde un solo panel</p>
+                </div>
+
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">📄</span>
+                    <h4 className="font-semibold text-white">Reportes Automáticos</h4>
+                  </div>
+                  <p className="text-sm text-gray-500">PDF, Excel o WhatsApp con un solo clic</p>
+                </div>
+
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🔗</span>
+                    <h4 className="font-semibold text-white">Integraciones OAuth</h4>
+                  </div>
+                  <p className="text-sm text-gray-500">Conecta directamente con Meta, YouTube y TikTok</p>
+                </div>
+
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">💰</span>
+                    <h4 className="font-semibold text-white">ROI y Conversiones</h4>
+                  </div>
+                  <p className="text-sm text-gray-500">Seguimiento completo de resultados y retorno</p>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-6">
+                <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
+                  <span className="text-xl">✨</span> Ideal para:
+                </h4>
+                <div className="grid sm:grid-cols-3 gap-3 text-sm">
+                  <div className="flex items-center gap-2 text-gray-300">
+                    <span className="text-indigo-400">•</span> Agencias de marketing
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-300">
+                    <span className="text-indigo-400">•</span> Community managers
+                  </div>
+                  <div className="flex items-center gap-2 text-gray-300">
+                    <span className="text-indigo-400">•</span> Equipos de marketing
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <p className="text-gray-400 leading-relaxed mb-8 max-w-3xl">{app.longDescription}</p>
+          )}
 
           {/* Meta */}
           <div className="flex flex-wrap gap-3 mb-8">
