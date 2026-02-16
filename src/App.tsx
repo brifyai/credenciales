@@ -1,4 +1,5 @@
 import { useState, useMemo, useEffect, useCallback } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { 
   Search, Eye, EyeOff, Copy, Check, ArrowLeft, ArrowRight, 
   ExternalLink, Lock, Mail, Loader2, ChevronDown, Shield, Layers,
@@ -200,13 +201,20 @@ function LoginPage({ onLogin }: { onLogin: () => void }) {
 /* ============================================================
    APP CARD
    ============================================================ */
-function AppCard({ app, onClick }: { app: AppData; onClick: () => void }) {
+function AppCard({ app }: { app: AppData }) {
+  const navigate = useNavigate();
   const avail = app.status !== 'coming-soon';
   const [imgOk, setImgOk] = useState(true);
 
+  const handleClick = () => {
+    if (avail) {
+      navigate(`/${app.id}`);
+    }
+  };
+
   return (
     <div
-      onClick={() => avail && onClick()}
+      onClick={handleClick}
       className={`group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.06] bg-white/[0.02] transition-all duration-300 ${
         avail ? 'cursor-pointer hover:border-white/[0.12] hover:bg-white/[0.04]' : 'opacity-50'
       }`}
@@ -313,7 +321,16 @@ function CredCard({ cred, color }: { cred: AppData['credentials'][0]; color: str
 /* ============================================================
    APP DETAIL PAGE
    ============================================================ */
-function DetailPage({ app, onBack }: { app: AppData; onBack: () => void }) {
+function DetailPage() {
+  const { appId } = useParams();
+  const navigate = useNavigate();
+  const app = apps.find(a => a.id === appId);
+
+  if (!app) {
+    navigate('/');
+    return null;
+  }
+
   const avail = app.status !== 'coming-soon';
 
   return (
@@ -325,12 +342,7 @@ function DetailPage({ app, onBack }: { app: AppData; onBack: () => void }) {
           <div className="absolute bottom-0 left-0 right-0 h-60 bg-gradient-to-t from-black to-transparent" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-6 pt-12 pb-12">
-          {/* Back */}
-          <button onClick={onBack} className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-10 group">
-            <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
-            Volver al Showroom
-          </button>
+        <div className="relative mx-auto max-w-6xl px-6 pt-8 pb-12">
 
           {/* App header */}
           <div className="flex flex-col sm:flex-row items-start gap-5 mb-6">
@@ -367,16 +379,27 @@ function DetailPage({ app, onBack }: { app: AppData; onBack: () => void }) {
 
           {/* CTA */}
           {avail && (
-            <a
-              href={app.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-2xl px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
-              style={{ background: `linear-gradient(135deg, ${app.color}, ${app.color}cc)`, boxShadow: `0 10px 40px ${app.color}30` }}
-            >
-              <ExternalLink size={16} />
-              Abrir {app.name}
-            </a>
+            <div className="flex flex-col gap-3">
+              <a
+                href={app.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 rounded-2xl px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
+                style={{ background: `linear-gradient(135deg, ${app.color}, ${app.color}cc)`, boxShadow: `0 10px 40px ${app.color}30` }}
+              >
+                <ExternalLink size={16} />
+                Abrir {app.name}
+              </a>
+              
+              {/* Back button */}
+              <button 
+                onClick={() => navigate('/')} 
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-sm text-gray-300 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.15] transition-all group"
+              >
+                <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
+                Volver al Showroom
+              </button>
+            </div>
           )}
         </div>
       </div>
@@ -511,7 +534,7 @@ function DetailPage({ app, onBack }: { app: AppData; onBack: () => void }) {
 /* ============================================================
    SHOWROOM PAGE
    ============================================================ */
-function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
+function ShowroomPage() {
   const [search, setSearch] = useState('');
   const [scrolled, setScrolled] = useState(false);
 
@@ -520,6 +543,11 @@ function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
     window.addEventListener('scroll', fn);
     return () => window.removeEventListener('scroll', fn);
   }, []);
+
+  const handleLogout = () => {
+    try { sessionStorage.removeItem('ai_auth'); } catch {}
+    window.location.reload();
+  };
 
   const filtered = useMemo(() => {
     if (!search) return apps;
@@ -542,18 +570,26 @@ function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
       >
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex h-20 items-center justify-between">
-            <a href="https://www.aintelligence.cl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+            <a href="/" className="flex items-center gap-3">
               <img src="/logo_ai.png" alt="AIntelligence" className="h-10 object-contain" />
             </a>
-            <a
-              href="https://www.aintelligence.cl"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-all hover:opacity-90"
-              style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)' }}
-            >
-              Contactar
-            </a>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://www.aintelligence.cl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white transition-all hover:opacity-90"
+                style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)' }}
+              >
+                Contactar
+              </a>
+              <button
+                onClick={handleLogout}
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-gray-400 hover:text-white transition-all border border-white/[0.1] hover:border-white/[0.2]"
+              >
+                Cerrar Sesión
+              </button>
+            </div>
           </div>
         </div>
       </header>
@@ -613,7 +649,7 @@ function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
         ) : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" style={{ gridAutoRows: '1fr' }}>
             {filtered.map(app => (
-              <AppCard key={app.id} app={app} onClick={() => onSelect(app)} />
+              <AppCard key={app.id} app={app} />
             ))}
           </div>
         )}
@@ -655,34 +691,31 @@ function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
 /* ============================================================
    MAIN APP - ALL HOOKS AT TOP LEVEL, NO CONDITIONAL RETURNS
    ============================================================ */
-export function App() {
+function AppContent() {
   const [authed, setAuthed] = useState(() => {
     try { return sessionStorage.getItem('ai_auth') === 'true'; } catch { return false; }
   });
-  const [selected, setSelected] = useState<AppData | null>(null);
-
-  const handleSelect = useCallback((app: AppData) => {
-    setSelected(app);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
-
-  const handleBack = useCallback(() => {
-    setSelected(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
 
   const handleLogin = useCallback(() => {
     setAuthed(true);
   }, []);
 
-  // Single return - no early returns before this
   if (!authed) {
     return <LoginPage onLogin={handleLogin} />;
   }
 
-  if (selected) {
-    return <DetailPage app={selected} onBack={handleBack} />;
-  }
+  return (
+    <Routes>
+      <Route path="/" element={<ShowroomPage />} />
+      <Route path="/:appId" element={<DetailPage />} />
+    </Routes>
+  );
+}
 
-  return <ShowroomPage onSelect={handleSelect} />;
+export function App() {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
+  );
 }

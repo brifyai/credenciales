@@ -33,7 +33,7 @@ export interface AppData {
 export const apps: AppData[] = [
   {
     id: 'crm-ai',
-    name: 'CRM AI',
+    name: 'Viewly',
     description: 'Gestión de clientes potenciada con IA',
     longDescription: 'Sistema CRM inteligente que utiliza machine learning para predecir comportamiento de clientes, automatizar seguimientos y optimizar el pipeline de ventas.',
     subdomain: 'crm',
@@ -63,7 +63,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'analytics-pro',
-    name: 'Analytics Pro',
+    name: 'Imetrics',
     description: 'Dashboards y análisis de datos en tiempo real',
     longDescription: 'Plataforma de analytics avanzada con dashboards interactivos, reportes automatizados y predicciones basadas en inteligencia artificial.',
     subdomain: 'analytics',
@@ -92,7 +92,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'chatbot-studio',
-    name: 'Chatbot Studio',
+    name: 'StafHubb',
     description: 'Crea chatbots inteligentes sin código',
     longDescription: 'Plataforma no-code para diseñar, entrenar y desplegar chatbots con IA conversacional avanzada. Integración con WhatsApp, Messenger e Instagram.',
     subdomain: 'chatbot',
@@ -121,7 +121,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'doc-ai',
-    name: 'DocAI',
+    name: 'ChatWoot',
     description: 'Procesamiento inteligente de documentos',
     longDescription: 'Extrae, clasifica y procesa información de documentos automáticamente usando OCR avanzado e IA. Facturas, contratos, formularios y más.',
     subdomain: 'docai',
@@ -150,7 +150,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'inventory-ai',
-    name: 'Inventory AI',
+    name: 'Virados',
     description: 'Gestión de inventario con predicción de demanda',
     longDescription: 'Sistema de gestión de inventario que predice demanda, optimiza stock y automatiza reposiciones usando machine learning.',
     subdomain: 'inventory',
@@ -179,7 +179,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'hr-suite',
-    name: 'HR Suite',
+    name: 'Verificador',
     description: 'Gestión de RRHH y talento humano',
     longDescription: 'Plataforma integral de recursos humanos con reclutamiento AI, evaluaciones automatizadas y gestión de nómina chilena.',
     subdomain: 'hr',
@@ -209,7 +209,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'marketing-ai',
-    name: 'Marketing AI',
+    name: 'EyeLab',
     description: 'Automatización de campañas con IA',
     longDescription: 'Plataforma de marketing automation con segmentación inteligente, generación de contenido con IA y optimización de campañas multicanal.',
     subdomain: 'marketing',
@@ -238,7 +238,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'finance-ai',
-    name: 'Finance AI',
+    name: 'ChatBi',
     description: 'Control financiero y predicción de flujo de caja',
     longDescription: 'Sistema financiero con predicción de flujo de caja, detección de anomalías y conciliación automática bancaria para empresas chilenas.',
     subdomain: 'finance',
@@ -267,7 +267,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'project-ai',
-    name: 'Project AI',
+    name: 'Brify AI',
     description: 'Gestión de proyectos con asistente inteligente',
     longDescription: 'Herramienta de gestión de proyectos con asistente IA que sugiere plazos, identifica riesgos y optimiza la planificación automáticamente.',
     subdomain: 'projects',
@@ -297,7 +297,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'support-ai',
-    name: 'Support AI',
+    name: 'AI Restaurante',
     description: 'Mesa de ayuda con resolución automática',
     longDescription: 'Sistema de soporte técnico con clasificación automática de tickets, sugerencias de resolución con IA y base de conocimiento inteligente.',
     subdomain: 'support',
@@ -326,7 +326,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'ecommerce-ai',
-    name: 'E-Commerce AI',
+    name: 'Panorama Nacional',
     description: 'Tienda online con recomendaciones IA',
     longDescription: 'Plataforma e-commerce con motor de recomendaciones inteligente, pricing dinámico y detección de fraude.',
     subdomain: 'ecommerce',
@@ -354,7 +354,7 @@ export const apps: AppData[] = [
   },
   {
     id: 'vision-ai',
-    name: 'Vision AI',
+    name: 'Nativo Digital',
     description: 'Reconocimiento visual e inspección automatizada',
     longDescription: 'Plataforma de computer vision para inspección de calidad, reconocimiento de objetos y análisis visual automatizado.',
     subdomain: 'vision',
