@@ -257,13 +257,6 @@ function AppCard({ app }: { app: AppData }) {
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-[15px] font-semibold text-white mb-1.5 tracking-tight">{app.name}</h3>
         <p className="text-[13px] text-gray-500 leading-relaxed flex-1">{app.description}</p>
-        {avail && (
-          <div className="flex justify-end pt-4 mt-3 border-t border-white/[0.04]">
-            <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/[0.05] text-gray-500 group-hover:bg-indigo-500/20 group-hover:text-indigo-400 transition-all">
-              <ArrowRight size={16} />
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
