@@ -323,6 +323,10 @@ function DetailPage() {
   const navigate = useNavigate();
   const app = apps.find(a => a.id === appId);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [appId]);
+
   if (!app) {
     navigate('/');
     return null;
