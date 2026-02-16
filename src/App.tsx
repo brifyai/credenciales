@@ -346,25 +346,62 @@ function DetailPage() {
         <div className="relative mx-auto max-w-6xl px-6 pt-8 pb-12">
 
           {/* App header */}
-          <div className="flex flex-col sm:flex-row items-start gap-5 mb-6">
+          <div className="flex flex-col sm:flex-row items-start gap-5 mb-8">
             <div
               className="flex h-20 w-20 shrink-0 items-center justify-center rounded-3xl"
               style={{ background: `${app.color}20`, border: `1px solid ${app.color}30`, boxShadow: `0 20px 60px ${app.color}15` }}
             >
               {getIcon(app.icon, 40, app.color)}
             </div>
-            <div>
+            <div className="flex-1">
               <div className="flex items-center gap-3 mb-2 flex-wrap">
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">{app.name}</h1>
                 <StatusBadge status={app.status} />
               </div>
-              <p className="text-gray-400 text-lg">{app.description}</p>
+              <p className="text-gray-400 text-lg mb-4">{app.description}</p>
+              
+              {/* Meta info */}
+              <div className="flex flex-wrap gap-2">
+                {[
+                  { label: `v${app.version}`, icon: 'Settings' },
+                  { label: app.lastUpdate, icon: 'Calendar' },
+                  { label: app.category, icon: 'Tag' },
+                ].map(m => (
+                  <div key={m.label} className="flex items-center gap-1.5 rounded-lg bg-white/[0.04] border border-white/[0.06] px-3 py-1.5 text-xs text-gray-400">
+                    {getIcon(m.icon, 12)} <span>{m.label}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
+          {/* CTA Buttons */}
+          {avail && (
+            <div className="flex flex-col sm:flex-row gap-3 mb-12">
+              <a
+                href={app.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 rounded-2xl px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
+                style={{ background: `linear-gradient(135deg, ${app.color}, ${app.color}cc)`, boxShadow: `0 10px 40px ${app.color}30` }}
+              >
+                <ExternalLink size={18} />
+                Abrir {app.name}
+              </a>
+              
+              <button 
+                onClick={() => navigate('/')} 
+                className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white/[0.05] border border-white/[0.1] text-base text-gray-300 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.15] transition-all group"
+              >
+                <ArrowLeft size={18} className="transition-transform group-hover:-translate-x-1" />
+                Volver al Showroom
+              </button>
+            </div>
+          )}
+
           {/* Description - Special format for Viewly */}
           {app.id === 'viewly' ? (
-            <div className="space-y-6 mb-8 max-w-3xl">
+            <div className="space-y-6 mb-8">
               <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6">
                 <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
                   <span className="text-2xl">🎯</span> ¿Qué es Viewly?
@@ -429,64 +466,8 @@ function DetailPage() {
           ) : (
             <p className="text-gray-400 leading-relaxed mb-8 max-w-3xl">{app.longDescription}</p>
           )}
-
-          {/* Meta */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            {[
-              { label: `v${app.version}`, icon: 'Settings' },
-              { label: app.lastUpdate, icon: 'Calendar' },
-              { label: app.category, icon: 'Tag' },
-              { label: `${app.subdomain}.aintelligence.cl`, icon: 'Globe' },
-            ].map(m => (
-              <div key={m.label} className="flex items-center gap-2 rounded-xl bg-white/[0.04] border border-white/[0.06] px-4 py-2.5 text-sm text-gray-400">
-                {getIcon(m.icon, 14)} <span>{m.label}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          {avail && (
-            <div className="flex flex-col gap-3">
-              <a
-                href={app.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 rounded-2xl px-8 py-4 text-base font-semibold text-white transition-all hover:opacity-90 active:scale-[0.98]"
-                style={{ background: `linear-gradient(135deg, ${app.color}, ${app.color}cc)`, boxShadow: `0 10px 40px ${app.color}30` }}
-              >
-                <ExternalLink size={16} />
-                Abrir {app.name}
-              </a>
-              
-              {/* Back button */}
-              <button 
-                onClick={() => navigate('/')} 
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/[0.05] border border-white/[0.1] text-sm text-gray-300 hover:text-white hover:bg-white/[0.08] hover:border-white/[0.15] transition-all group"
-              >
-                <ArrowLeft size={16} className="transition-transform group-hover:-translate-x-1" />
-                Volver al Showroom
-              </button>
-            </div>
-          )}
         </div>
       </div>
-
-      {/* Credentials */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
-            <Shield size={16} style={{ color: app.color }} />
-          </div>
-          <h2 className="text-2xl font-bold tracking-tight">Credenciales de Acceso</h2>
-        </div>
-        <p className="text-gray-500 text-sm mb-8 ml-[52px]">Usa estas credenciales para ingresar a la aplicación</p>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {app.credentials.map((c, i) => (
-            <CredCard key={i} cred={c} color={app.color} />
-          ))}
-        </div>
-      </section>
 
       {/* Features */}
       <section className="mx-auto max-w-6xl px-6 py-16">
@@ -517,8 +498,44 @@ function DetailPage() {
         </div>
       </section>
 
-      {/* Tech Stack & Tags */}
+      {/* Credentials */}
       <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
+            <Shield size={16} style={{ color: app.color }} />
+          </div>
+          <h2 className="text-2xl font-bold tracking-tight">Credenciales de Acceso</h2>
+        </div>
+        <p className="text-gray-500 text-sm mb-8 ml-[52px]">Usa estas credenciales para ingresar a la aplicación</p>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {app.credentials.map((c, i) => (
+            <CredCard key={i} cred={c} color={app.color} />
+          ))}
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8">
+          <h3 className="text-lg font-bold tracking-tight mb-6 flex items-center gap-3">
+            <span className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
+              <Settings size={20} style={{ color: app.color }} />
+            </span>
+            Stack Tecnológico
+          </h3>
+          <div className="flex flex-wrap gap-3">
+            {app.techStack.map(t => (
+              <span key={t} className="rounded-xl border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-sm text-gray-300 font-medium hover:bg-white/[0.06] transition-all">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack & Tags */}
+      <section className="mx-auto max-w-6xl px-6 py-16" style={{ display: 'none' }}>
         <div className="grid gap-6 lg:grid-cols-2">
           {/* Tech */}
           <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-8">
