@@ -37,9 +37,7 @@ const getIcon = (iconName: string, size: number = 20, color?: string) => {
    VALID CREDENTIALS
    ============================================================ */
 const VALID_CREDS = [
-  { email: 'admin@aintelligence.cl', password: 'ShowRoom2024!' },
-  { email: 'demo@aintelligence.cl', password: 'Demo2024!' },
-  { email: 'cliente@aintelligence.cl', password: 'Cliente2024!' },
+  { email: 'hola@aintelligence.cl', password: 'Aintelligence2026$' },
 ];
 
 /* ============================================================
