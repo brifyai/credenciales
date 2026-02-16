@@ -26,7 +26,7 @@ const iconMap: Record<string, LucideIcon> = {
   FlaskConical, DollarSign, AlertTriangle, Building2, Trello, Clock,
   Tag, Globe, Sparkles, ShieldAlert, CreditCard, Truck, Search, Hash,
   Monitor, Settings, Mail, LayoutDashboard, FileBarChart, LineChart,
-  GitCompare, Plug2
+  GitCompare, Plug2, KeyRound, Code2
 };
 
 const getIcon = (iconName: string, size: number = 20, color?: string) => {
