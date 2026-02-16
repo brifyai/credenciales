@@ -35,7 +35,7 @@ export const apps: AppData[] = [
     id: 'viewly',
     name: 'Viewly',
     description: 'Plataforma de analítica digital para redes sociales',
-    longDescription: 'Viewly centraliza todas tus campañas de marketing digital en un solo lugar. Gestiona Facebook, Instagram, TikTok y YouTube desde una interfaz moderna. Genera reportes profesionales automáticos, compara rendimiento entre plataformas y presenta resultados impactantes a tus clientes. Ideal para agencias, community managers y equipos de marketing que buscan eficiencia y resultados medibles.',
+    longDescription: 'Viewly es tu centro de comando para marketing digital. Gestiona y analiza campañas de Facebook, Instagram, TikTok y YouTube desde una sola plataforma. Diseñada para agencias, community managers y equipos de marketing que necesitan resultados medibles y presentaciones profesionales. Conecta tus cuentas con OAuth 2.0, visualiza métricas en tiempo real, compara rendimiento entre plataformas y genera reportes automáticos en PDF, Excel o WhatsApp. Incluye dashboard interactivo con gráficos animados, gestión de múltiples clientes, comparación de hasta 3 campañas, y seguimiento completo de ROI, conversiones, engagement y más. Interfaz moderna con modo oscuro, responsive y optimizada para presentar resultados impactantes a tus clientes.',
     subdomain: 'viewly',
     url: 'https://viewly-jade.vercel.app',
     icon: 'Users',
