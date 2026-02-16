@@ -113,7 +113,6 @@ function LoginPage({ onLogin }: { onLogin: () => void }) {
               <h1 className="text-3xl font-bold tracking-tight text-white mb-1">
                 Showroom de Aplicaciones
               </h1>
-              <p className="text-sm text-gray-500">Showroom de Aplicaciones</p>
             </div>
 
             {/* Divider */}
