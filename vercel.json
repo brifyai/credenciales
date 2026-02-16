@@ -2,5 +2,11 @@
   "buildCommand": "echo 'Using pre-built files'",
   "outputDirectory": "dist",
   "framework": null,
-  "installCommand": "echo 'No install needed'"
+  "installCommand": "echo 'No install needed'",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
