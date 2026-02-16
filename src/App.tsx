@@ -402,63 +402,91 @@ function DetailPage() {
           {/* Description - Special format for Viewly */}
           {app.id === 'viewly' ? (
             <div className="space-y-6 mb-8">
-              <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6">
-                <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
-                  <span className="text-2xl">🎯</span> ¿Qué es Viewly?
+              <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8">
+                <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                  <span className="text-3xl">🎯</span> ¿Qué es Viewly?
                 </h3>
+                <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                  Tu centro de comando para marketing digital. Viewly centraliza y analiza todas tus campañas de 
+                  <span className="text-blue-400 font-semibold"> Facebook</span>, 
+                  <span className="text-pink-400 font-semibold"> Instagram</span>, 
+                  <span className="text-purple-400 font-semibold"> TikTok</span> y 
+                  <span className="text-red-400 font-semibold"> YouTube</span> en una sola plataforma.
+                </p>
                 <p className="text-gray-400 leading-relaxed">
-                  Plataforma profesional que centraliza el análisis de campañas de Facebook, Instagram, TikTok y YouTube. 
-                  Diseñada para agencias, community managers y equipos de marketing digital.
+                  Olvídate de abrir múltiples pestañas y perder tiempo copiando datos. Con Viewly, conectas tus cuentas una vez 
+                  y obtienes métricas en tiempo real, reportes profesionales automáticos y análisis comparativos que impresionan a tus clientes.
                 </p>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">📊</span>
-                    <h4 className="font-semibold text-white">Dashboard Unificado</h4>
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-3xl">📊</span>
+                    <h4 className="font-bold text-white text-lg">Dashboard Unificado</h4>
                   </div>
-                  <p className="text-sm text-gray-500">Todas tus métricas en tiempo real desde un solo panel</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Visualiza todas tus métricas en tiempo real: impresiones, alcance, engagement, conversiones y ROI. 
+                    Todo en un solo panel interactivo con gráficos que se actualizan automáticamente.
+                  </p>
                 </div>
 
-                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">📄</span>
-                    <h4 className="font-semibold text-white">Reportes Automáticos</h4>
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-3xl">📄</span>
+                    <h4 className="font-bold text-white text-lg">Reportes Profesionales</h4>
                   </div>
-                  <p className="text-sm text-gray-500">PDF, Excel o WhatsApp con un solo clic</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Genera reportes impactantes en PDF o Excel con un clic. Incluye gráficos, comparativas y análisis. 
+                    Compártelos por email o envíalos directamente por WhatsApp a tus clientes.
+                  </p>
                 </div>
 
-                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">🔗</span>
-                    <h4 className="font-semibold text-white">Integraciones OAuth</h4>
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-3xl">🔗</span>
+                    <h4 className="font-bold text-white text-lg">Integraciones OAuth 2.0</h4>
                   </div>
-                  <p className="text-sm text-gray-500">Conecta directamente con Meta, YouTube y TikTok</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Conecta directamente con Meta (Facebook & Instagram), YouTube y TikTok. 
+                    Autenticación segura que importa tus métricas reales sin trabajo manual.
+                  </p>
                 </div>
 
-                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-5">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="text-xl">💰</span>
-                    <h4 className="font-semibold text-white">ROI y Conversiones</h4>
+                <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-all">
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-3xl">💰</span>
+                    <h4 className="font-bold text-white text-lg">ROI y Conversiones</h4>
                   </div>
-                  <p className="text-sm text-gray-500">Seguimiento completo de resultados y retorno</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">
+                    Rastrea cada peso invertido. Calcula automáticamente el retorno de inversión, costo por clic, 
+                    conversiones y métricas que realmente importan para tus clientes.
+                  </p>
                 </div>
               </div>
 
-              <div className="rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-6">
-                <h4 className="font-semibold text-white mb-3 flex items-center gap-2">
-                  <span className="text-xl">✨</span> Ideal para:
+              <div className="rounded-2xl border border-indigo-500/30 bg-gradient-to-br from-indigo-500/10 to-purple-500/10 p-8">
+                <h4 className="font-bold text-white text-xl mb-4 flex items-center gap-3">
+                  <span className="text-3xl">✨</span> Perfecto para:
                 </h4>
-                <div className="grid sm:grid-cols-3 gap-3 text-sm">
-                  <div className="flex items-center gap-2 text-gray-300">
-                    <span className="text-indigo-400">•</span> Agencias de marketing
+                <div className="grid sm:grid-cols-3 gap-4">
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2 text-white font-semibold">
+                      <span className="text-indigo-400 text-xl">•</span> Agencias de Marketing
+                    </div>
+                    <p className="text-sm text-gray-400 ml-6">Gestiona múltiples clientes con reportes automáticos</p>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-300">
-                    <span className="text-indigo-400">•</span> Community managers
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2 text-white font-semibold">
+                      <span className="text-indigo-400 text-xl">•</span> Community Managers
+                    </div>
+                    <p className="text-sm text-gray-400 ml-6">Centraliza todas tus redes sociales en un solo lugar</p>
                   </div>
-                  <div className="flex items-center gap-2 text-gray-300">
-                    <span className="text-indigo-400">•</span> Equipos de marketing
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-2 text-white font-semibold">
+                      <span className="text-indigo-400 text-xl">•</span> Equipos de Marketing
+                    </div>
+                    <p className="text-sm text-gray-400 ml-6">Toma decisiones basadas en datos reales y comparables</p>
                   </div>
                 </div>
               </div>
