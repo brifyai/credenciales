@@ -100,11 +100,11 @@ function LoginPage({ onLogin }: { onLogin: () => void }) {
           <div className="p-8 sm:p-10">
             {/* Logo */}
             <div className="text-center mb-10">
-              <div className="mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-3xl" style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)', boxShadow: '0 20px 60px rgba(99,102,241,0.2)' }}>
-                <Layers size={36} color="white" strokeWidth={2} />
+              <div className="mx-auto mb-5 flex items-center justify-center">
+                <img src="/logo_ai.png" alt="AIntelligence" className="h-20 object-contain" />
               </div>
               <h1 className="text-3xl font-bold tracking-tight text-white mb-1">
-                AI<span style={{ color: '#818cf8' }}>ntelligence</span>
+                Showroom de Aplicaciones
               </h1>
               <p className="text-sm text-gray-500">Showroom de Aplicaciones</p>
             </div>
@@ -499,10 +499,7 @@ function DetailPage({ app, onBack }: { app: AppData; onBack: () => void }) {
       <footer className="border-t border-white/[0.04] py-10">
         <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)' }}>
-              <Layers size={16} color="white" strokeWidth={2} />
-            </div>
-            <span className="text-sm font-semibold text-white">AI<span style={{ color: '#818cf8' }}>ntelligence</span></span>
+            <img src="/logo_ai.png" alt="AIntelligence" className="h-8 object-contain" />
           </div>
           <p className="text-xs text-gray-600">© {new Date().getFullYear()} AIntelligence. Todos los derechos reservados.</p>
         </div>
@@ -546,10 +543,7 @@ function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
         <div className="mx-auto max-w-6xl px-6">
           <div className="flex h-20 items-center justify-between">
             <a href="https://www.aintelligence.cl" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)' }}>
-                <Layers size={22} color="white" strokeWidth={2} />
-              </div>
-              <span className="text-xl font-bold tracking-tight text-white">AI<span style={{ color: '#818cf8' }}>ntelligence</span></span>
+              <img src="/logo_ai.png" alt="AIntelligence" className="h-10 object-contain" />
             </a>
             <a
               href="https://www.aintelligence.cl"
@@ -570,11 +564,6 @@ function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent" />
 
         <div className="relative mx-auto max-w-5xl px-6 text-center">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-indigo-500/20 bg-indigo-500/5 px-5 py-2 text-sm text-indigo-300">
-            <span className="h-1.5 w-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            Showroom · {apps.length} Aplicaciones
-          </div>
-
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-8">
             <span className="text-white">Nuestras </span>
             <span style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>aplicaciones</span>
@@ -651,10 +640,7 @@ function ShowroomPage({ onSelect }: { onSelect: (app: AppData) => void }) {
       <footer className="border-t border-white/[0.04] py-12">
         <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg" style={{ background: 'linear-gradient(135deg, #6366f1, #a855f7)' }}>
-              <Layers size={16} color="white" strokeWidth={2} />
-            </div>
-            <span className="text-sm font-semibold text-white">AI<span style={{ color: '#818cf8' }}>ntelligence</span></span>
+            <img src="/logo_ai.png" alt="AIntelligence" className="h-8 object-contain" />
           </div>
           <p className="text-xs text-gray-600">© {new Date().getFullYear()} AIntelligence. Todos los derechos reservados.</p>
           <a href="https://www.aintelligence.cl" target="_blank" rel="noopener noreferrer" className="text-xs text-gray-500 hover:text-white transition-colors">
