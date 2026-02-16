@@ -37,7 +37,7 @@ const getIcon = (iconName: string, size: number = 20, color?: string) => {
    VALID CREDENTIALS
    ============================================================ */
 const VALID_CREDS = [
-  { email: 'hola@aintelligence.cl', password: 'Aintelligence2026$' },
+  { email: 'hola@aintelligence.cl', password: 'Aintelligence2026$' }
 ];
 
 /* ============================================================
@@ -76,9 +76,17 @@ function LoginPage({ onLogin }: { onLogin: () => void }) {
     setErr('');
     setLoading(true);
     await new Promise(r => setTimeout(r, 1000));
+    
+    console.log('Email ingresado:', email.toLowerCase().trim());
+    console.log('Password ingresado:', pw);
+    console.log('Credenciales válidas:', VALID_CREDS);
+    
     const ok = VALID_CREDS.some(
       c => c.email.toLowerCase() === email.toLowerCase().trim() && c.password === pw
     );
+    
+    console.log('Login exitoso:', ok);
+    
     setLoading(false);
     if (ok) {
       try { sessionStorage.setItem('ai_auth', 'true'); } catch {}
