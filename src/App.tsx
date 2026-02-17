@@ -539,28 +539,47 @@ function DetailPage() {
 
       {/* Features */}
       <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
-            <Zap size={20} style={{ color: app.color }} />
+        <div className="mb-10">
+          <div className="flex items-center gap-4 mb-3">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl" style={{ background: `linear-gradient(135deg, ${app.color}, ${app.color}cc)`, boxShadow: `0 8px 32px ${app.color}40` }}>
+              <Zap size={28} className="text-white" />
+            </div>
+            <div>
+              <h2 className="text-3xl font-bold tracking-tight bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
+                Características y Funciones
+              </h2>
+              <div className="h-1 w-32 rounded-full mt-2" style={{ background: `linear-gradient(90deg, ${app.color}, transparent)` }} />
+            </div>
           </div>
-          <h2 className="text-2xl font-bold tracking-tight">Características y Funciones</h2>
+          <p className="text-gray-400 text-base ml-[72px]">Todo lo que incluye {app.name}</p>
         </div>
-        <p className="text-gray-500 text-sm mb-8 ml-[52px]">Todo lo que incluye {app.name}</p>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {app.features.map((f, i) => (
             <div
               key={i}
-              className="group rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 transition-all duration-300 hover:border-white/[0.1] hover:bg-white/[0.04]"
+              className="group relative rounded-2xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-white/[0.01] p-7 transition-all duration-300 hover:border-white/[0.15] hover:shadow-xl hover:-translate-y-1"
+              style={{ boxShadow: `0 0 0 0 ${app.color}00` }}
+              onMouseEnter={(e) => e.currentTarget.style.boxShadow = `0 20px 60px -15px ${app.color}30`}
+              onMouseLeave={(e) => e.currentTarget.style.boxShadow = `0 0 0 0 ${app.color}00`}
             >
-              <div
-                className="flex h-12 w-12 items-center justify-center rounded-xl mb-4 transition-transform duration-300 group-hover:scale-110"
-                style={{ background: `${app.color}15`, border: `1px solid ${app.color}20` }}
-              >
-                {getIcon(f.icon, 24, app.color)}
+              {/* Gradient overlay on hover */}
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: `linear-gradient(135deg, ${app.color}05, transparent)` }} />
+              
+              <div className="relative">
+                <div
+                  className="flex h-14 w-14 items-center justify-center rounded-xl mb-5 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                  style={{ background: `linear-gradient(135deg, ${app.color}20, ${app.color}10)`, border: `1px solid ${app.color}30`, boxShadow: `0 4px 16px ${app.color}20` }}
+                >
+                  {getIcon(f.icon, 26, app.color)}
+                </div>
+                <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all">
+                  {f.title}
+                </h3>
+                <p className="text-[13px] text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                  {f.description}
+                </p>
               </div>
-              <h3 className="text-[15px] font-semibold text-white mb-2 tracking-tight">{f.title}</h3>
-              <p className="text-[13px] text-gray-500 leading-relaxed">{f.description}</p>
             </div>
           ))}
         </div>
