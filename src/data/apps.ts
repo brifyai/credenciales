@@ -43,7 +43,7 @@ export const apps: AppData[] = [
     category: 'Marketing Digital',
     tags: ['Analytics', 'Redes Sociales', 'Reportes', 'ROI'],
     status: 'live',
-    previewImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop&q=80',
+    previewImage: '/viewly-preview.png.png',
     credentials: [
       { email: 'demo@viewly.com', password: 'demo123', role: 'Cuenta de Prueba' },
     ],
