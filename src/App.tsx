@@ -573,10 +573,10 @@ function DetailPage() {
                 >
                   {getIcon(f.icon, 26, app.color)}
                 </div>
-                <h3 className="text-base font-bold text-white mb-3 tracking-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all">
+                <h3 className="text-lg font-bold text-white mb-3 tracking-tight group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 group-hover:bg-clip-text transition-all">
                   {f.title}
                 </h3>
-                <p className="text-[13px] text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                   {f.description}
                 </p>
               </div>
