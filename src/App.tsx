@@ -405,24 +405,47 @@ function DetailPage() {
           {/* Description - Special format for Viewly */}
           {app.id === 'viewly' ? (
             <div className="space-y-6 mb-8">
-              <div className="rounded-2xl border border-white/[0.08] bg-white/[0.03] p-8">
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: `${app.color}15`, border: `1px solid ${app.color}25` }}>
-                    <Crosshair size={24} style={{ color: app.color }} />
+              <div className="relative rounded-3xl border border-white/[0.1] overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%)' }}>
+                {/* Decorative gradient orbs */}
+                <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 rounded-full blur-3xl" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl" />
+                
+                <div className="relative p-8 sm:p-10">
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl shrink-0" style={{ background: `linear-gradient(135deg, ${app.color}, ${app.color}cc)`, boxShadow: `0 8px 32px ${app.color}40` }}>
+                      <Crosshair size={28} className="text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-3xl font-bold mb-2 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                        ¿Qué es Viewly?
+                      </h3>
+                      <div className="h-1 w-20 rounded-full" style={{ background: `linear-gradient(90deg, ${app.color}, transparent)` }} />
+                    </div>
                   </div>
-                  ¿Qué es Viewly?
-                </h3>
-                <p className="text-gray-300 text-lg leading-relaxed mb-4">
-                  Tu centro de comando para marketing digital. Viewly centraliza y analiza todas tus campañas de 
-                  <span className="text-blue-400 font-semibold"> Facebook</span>, 
-                  <span className="text-pink-400 font-semibold"> Instagram</span>, 
-                  <span className="text-purple-400 font-semibold"> TikTok</span> y 
-                  <span className="text-red-400 font-semibold"> YouTube</span> en una sola plataforma.
-                </p>
-                <p className="text-gray-400 leading-relaxed">
-                  Olvídate de abrir múltiples pestañas y perder tiempo copiando datos. Con Viewly, conectas tus cuentas una vez 
-                  y obtienes métricas en tiempo real, reportes profesionales automáticos y análisis comparativos que impresionan a tus clientes.
-                </p>
+                  
+                  <p className="text-gray-200 text-lg leading-relaxed mb-5">
+                    Tu centro de comando para marketing digital. Viewly centraliza y analiza todas tus campañas de 
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 mx-1 rounded-md bg-blue-500/20 text-blue-300 font-semibold border border-blue-500/30">
+                      Facebook
+                    </span>, 
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 mx-1 rounded-md bg-pink-500/20 text-pink-300 font-semibold border border-pink-500/30">
+                      Instagram
+                    </span>, 
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 mx-1 rounded-md bg-purple-500/20 text-purple-300 font-semibold border border-purple-500/30">
+                      TikTok
+                    </span> y 
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 mx-1 rounded-md bg-red-500/20 text-red-300 font-semibold border border-red-500/30">
+                      YouTube
+                    </span> en una sola plataforma.
+                  </p>
+                  
+                  <div className="rounded-xl bg-black/20 border border-white/[0.08] p-5 backdrop-blur-sm">
+                    <p className="text-gray-300 leading-relaxed">
+                      Olvídate de abrir múltiples pestañas y perder tiempo copiando datos. Con Viewly, conectas tus cuentas una vez 
+                      y obtienes <span className="text-indigo-300 font-semibold">métricas en tiempo real</span>, <span className="text-indigo-300 font-semibold">reportes profesionales automáticos</span> y <span className="text-indigo-300 font-semibold">análisis comparativos</span> que impresionan a tus clientes.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
